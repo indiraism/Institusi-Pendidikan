@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 ## _Business Dashboard_
 
-_Dashboard_ "_Jaya Jaya Institute Student Performance Dashboard_" yang ditampilkan berfungsi sebagai alat bantu visual untuk monitoring performa Siswa secara keseluruhan, terutama dalam hal status pendidikan, _dropout_, dan demografi. Tujuan utama dari _business dashboard_ tersebut untuk:
+_Dashboard_ "_Jaya Jaya Institute Student Performance Dashboard_" yang ditampilkan berfungsi sebagai alat bantu visual untuk monitoring performa siswa secara keseluruhan, terutama dalam hal status pendidikan, _dropout_, dan demografi. Tujuan utama dari _business dashboard_ tersebut untuk:
 
 1. Memantau fluktuasi _dropout_ dari waktu ke waktu.
 2. Menganalisis faktor yang berkaitan dengan _dropout_.
@@ -60,15 +60,14 @@ Aplikasi ini digunakan untuk memprediksi apakah seorang Siswa **_Dropout_**, **M
 - Model akan memproses seluruh baris.
 - Kolom hasil prediksi (Prediksi) akan ditambahkan.
 - Label prediksi:
-
-    1. `Enrolled` → Masih aktif
-    2. `Internally Transferred` → Pindah prodi
-    3. `Dropout` → Berhenti kuliah
+1. `Enrolled` → Masih aktif
+2. `Internally Transferred` → Pindah prodi
+3. `Dropout` → Berhenti kuliah
 
 
 ## _Conclusion_
 
-Berdasarkan hasil eksplorasi dan visualisasi data yang ditampilkan dalam _dashboard_, dapat disimpulkan beberapa hal penting terkait pola dan karakteristik siswa yang mengalami _dropout_ yaitu bahwa _dropout_ di Jaya Jaya Institute bukan hanya masalah individu, tapi masalah sistemik. Tingginya proporsi msiswa yang keluar dari sistem menandakan perlunya tindakan:
+Berdasarkan hasil eksplorasi dan visualisasi data yang ditampilkan dalam _dashboard_, dapat disimpulkan beberapa hal penting terkait pola dan karakteristik siswa yang mengalami _dropout_ yaitu bahwa _dropout_ di Jaya Jaya Institute bukan hanya masalah individu, tapi masalah sistemik. Tingginya proporsi siswa yang keluar dari sistem menandakan perlunya tindakan:
 
 - **Evaluasi menyeluruh terhadap program akademik, dukungan siswa, dan faktor eksternal** yang mempengaruhi keberlanjutan studi.
 - **Intervensi preventif** harus diarahkan tidak hanya pada siswa dengan nilai rendah, tetapi juga pada mereka yang menunjukkan performa akademik baik namun berisiko keluar.
