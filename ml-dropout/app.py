@@ -1,11 +1,12 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
+from pathlib import Path
 import pickle
 
 # --- Load Model dan Scaler ---
-model = pickle.load(open("model.pkl", "rb"))
-scaler = pickle.load(open("scaler.pkl", "rb"))
+model = pickle.load(open(Path(__file__).parent / "model.pkl", "rb"))
+scaler = pickle.load(open(Path(__file__).parent / "scaler.pkl", "rb"))
 
 st.set_page_config(page_title="Batch Prediksi Dropout", layout="centered")
 st.title("📂 Prediksi Dropout Siswa - Upload CSV")
