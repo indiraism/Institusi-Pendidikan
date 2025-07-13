@@ -20,28 +20,67 @@ Tantangan utama yang dihadapi oleh Jaya Jaya Institute adalah tingginya tingkat 
 Sumber data: [_Student's Performance Dataset_](https://github.com/dicodingacademy/dicoding_dataset/blob/main/students_performance/data.csv)
 
 _Setup environment_:
-1. Membuat _environment_ baru bernama newenv
+- Proyek ini dapat dijalankan dengan mudah menggunakan Google Colabolatory (Colab), yang menyediakan *environment* siap pakai dengan sebagian besar dependensi yang sudah **terinstal**.
+- Namun jika ingin menjalankan proyek ini secara local di komputer pribadi, disarankan untuk menggunakan virtual environment untuk mengelola dependensi proyek:
+
+**1. Membuat _Virtual Environment_ (opsional, untuk lokal)**:
+Buka terminal atau command prompt, lalu navigasikan ke direktori proyek Anda. Jalankan perintah berikut:
+
+```Bash
+python -m venv venv
 ```
-python -m venv newenv
+
+**2. Mengaktifkan _Virtual Environment_ (opsional, untuk lokal)** :
+- Windows:
+```Bash
+.\venv\Scripts\activate
 ```
-2. Aktivasi _environment_
+
+- macOS / Linux:
+```Bash
+    source venv/bin/activate
 ```
-.\newenv\Scripts\activate
+
+**3. Instalasi Dependensi** :
+- Baik di Google Colab maupun di _environment_ lokal (setelah mengaktifkan _virtual environment_), Anda mungkin perlu menginstal beberapa _library_ tambahan yang tidak tersedia secara _default_. Pastikan Anda berada di direktori proyek dan jalankan perintah berikut:
+```Bash
+    pip install -r requirements.txt
 ```
-3. Menginstal _package_ yang dibutuhkan
+- Catatan: Jika ada _library_ yang perlu diinstal di Colab, Anda bisa menambahkannya di sel kode awal _notebook_ Colab Anda dengan:
+```Bash
+!pip install nama_library
 ```
-pip install -r requirements.txt
+- Catatan: Untuk menjalankan _prediction notebook_ dibutuhkan file yang ada di folder model.
+
+## **Cara Menjalankan Proyek**
+**Menggunakan Google Colaboratory (Direkomendasikan)**
+1. **Buka Notebook** : Unggah atau buka file _notebook_ .ipynb proyek ini di Google Colab.
+2. **Jalankan Semua Sel** : Pastikan Anda menjalankan semua sel kode secara berurutan, dari atas ke bawah. Ini akan memproses data, melatih model (jika ada), dan menyiapkan _dashboard_.
+3. **Akses _Dashboard_** : Untuk mengakses _dashboard_ di Looker Studio, gunakan tautan yang disediakan di bagian "_Business Dashboard_" di bawah ini.
+
+## **Menjalankan Secara Lokal (Opsional)**
+Jika telah melakukan langkah-langkah _Setup Environment_ di atas untuk menjalankan proyek secara lokal:
+1. Pastikan _Virtual Environment_ Aktif: Di terminal atau _command prompt_, pastikan Anda telah mengaktifkan _virtual environment_.
+
+2. Akses _Dashboard_: Setelah skrip berhasil dijalankan, jika _dashboard_ Anda di-_hosting_ secara lokal, alamat akses biasanya akan ditampilkan di terminal (misalnya, http://127.0.0.1:8050/ atau http://localhost:5000/). Namun, untuk dashboard Looker Studio, Anda cukup mengakses tautan [_Jaya Jaya Institute Student Performance Dashboard_](https://lookerstudio.google.com/reporting/cf8b5153-87d7-47cc-8ee7-72aa9b5fb083).
+
+**Cara Menjalankan Skrip Prediksi Python (.py)** :
+
+Menggunakan streamlit:
+```Bash
+    streamlit run ml-dropout/app.py
 ```
+
 
 ## _Business Dashboard_
 
-_Dashboard_ "_Jaya Jaya Institute Student Performance Dashboard_" yang ditampilkan berfungsi sebagai alat bantu visual untuk monitoring performa Siswa secara keseluruhan, terutama dalam hal status pendidikan, _dropout_, dan demografi. Tujuan utama dari _business dashboard_ tersebut untuk:
+_Dashboard_ "_Jaya Jaya Institute Student Performance Dashboard_" yang ditampilkan berfungsi sebagai alat bantu visual untuk monitoring performa siswa secara keseluruhan, terutama dalam hal status pendidikan, _dropout_, dan demografi. Tujuan utama dari _business dashboard_ tersebut untuk:
 
 1. Memantau fluktuasi _dropout_ dari waktu ke waktu.
 2. Menganalisis faktor yang berkaitan dengan _dropout_.
 3. Menghitung dan menyajikan tingkat _dropout_.
 
-[_Jaya Jaya Institute Student Performance Dashboard_](https://lookerstudio.google.com/s/s-g6JbVbrPU)
+[_Jaya Jaya Institute Student Performance Dashboard_](https://lookerstudio.google.com/reporting/cf8b5153-87d7-47cc-8ee7-72aa9b5fb083)
 
 
 ## Menjalankan Sistem Machine Learning
@@ -60,18 +99,36 @@ Aplikasi ini digunakan untuk memprediksi apakah seorang Siswa **_Dropout_**, **M
 - Model akan memproses seluruh baris.
 - Kolom hasil prediksi (Prediksi) akan ditambahkan.
 - Label prediksi:
-
-    1. `Enrolled` → Masih aktif
-    2. `Internally Transferred` → Pindah prodi
-    3. `Dropout` → Berhenti kuliah
+1. `Enrolled` → Masih aktif
+2. `Internally Transferred` → Pindah prodi
+3. `Dropout` → Berhenti kuliah
 
 
 ## _Conclusion_
 
-Berdasarkan hasil eksplorasi dan visualisasi data yang ditampilkan dalam _dashboard_, dapat disimpulkan beberapa hal penting terkait pola dan karakteristik siswa yang mengalami _dropout_ yaitu bahwa _dropout_ di Jaya Jaya Institute bukan hanya masalah individu, tapi masalah sistemik. Tingginya proporsi msiswa yang keluar dari sistem menandakan perlunya tindakan:
+Berdasarkan hasil eksplorasi dan visualisasi data pada *dashboard*, dapat disimpulkan bahwa permasalahan **_dropout_ siswa di Jaya Jaya Institute** bukan sekadar persoalan individu, tetapi merupakan **masalah sistemik** yang melibatkan berbagai faktor akademik dan non-akademik.
 
-- **Evaluasi menyeluruh terhadap program akademik, dukungan siswa, dan faktor eksternal** yang mempengaruhi keberlanjutan studi.
-- **Intervensi preventif** harus diarahkan tidak hanya pada siswa dengan nilai rendah, tetapi juga pada mereka yang menunjukkan performa akademik baik namun berisiko keluar.
+Tingginya proporsi msiswa _dropout_ (**49,93% dari total 4.424 mahasiswa**) mengindikasikan perlunya perhatian serius. Analisis mendalam menunjukkan bahwa:
+
+- 🔹 **Karakteristik umum siswa yang _dropout_:**
+  - Mayoritas berada pada kelompok usia **<20 tahun** saat masuk kuliah.
+  - Memiliki nilai akademik rata-rata yang justru **lebih tinggi** dibanding siswa aktif dan yang pindah.
+  - Cenderung tidak melanjutkan studi meski secara performa akademik tergolong baik.
+
+- 🔹 **Faktor-faktor yang berkontribusi pada _dropout_:**
+  - **Usia saat masuk kuliah** (terutama siswa sangat muda yang belum siap secara mental dan sosial).
+  - **Kondisi non-akademik** seperti motivasi, dukungan sosial, dan beban pribadi.
+  - **Kurangnya sistem deteksi dini** terhadap mahasiswa berisiko.
+
+### ✅ Rekomendasi Tindak Lanjut:
+
+- **Evaluasi menyeluruh terhadap program akademik dan layanan dukungan siswa**, termasuk beban studi awal dan sistem orientasi kampus.
+- **Intervensi preventif** tidak hanya difokuskan pada mahasiswa berprestasi rendah, tetapi juga pada mahasiswa yang menunjukkan performa akademik baik namun berisiko keluar karena faktor eksternal.
+
+---
+
+Dashboard ini diharapkan dapat menjadi dasar dalam pengambilan keputusan strategis untuk meningkatkan **retensi dan keberhasilan studi mahasiswa** di masa mendatang.
+
 
 ### Rekomendasi _Action Items_
 
