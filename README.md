@@ -61,13 +61,8 @@ python -m venv venv
 ## **Menjalankan Secara Lokal (Opsional)**
 Jika telah melakukan langkah-langkah _Setup Environment_ di atas untuk menjalankan proyek secara lokal:
 1. Pastikan _Virtual Environment_ Aktif: Di terminal atau _command prompt_, pastikan Anda telah mengaktifkan _virtual environment_.
-2. Jalankan Skrip Utama: Navigasikan ke direktori utama proyek Anda. Kemudian, jalankan file Python utama proyek Anda. Jika file utama Anda adalah main.py, app.py, atau dashboard.py (sesuaikan dengan nama file Anda):
 
-```Bash
-    python nama_file_utama_anda.py
-```
-
-3. Akses Dashboard: Setelah skrip berhasil dijalankan, jika dashboard Anda di-hosting secara lokal, alamat akses biasanya akan ditampilkan di terminal (misalnya, http://127.0.0.1:8050/ atau http://localhost:5000/). Namun, untuk dashboard Looker Studio, Anda cukup mengakses tautan [_Jaya Jaya Institute Student Performance Dashboard_](https://lookerstudio.google.com/reporting/cf8b5153-87d7-47cc-8ee7-72aa9b5fb083).
+2. Akses _Dashboard_: Setelah skrip berhasil dijalankan, jika _dashboard_ Anda di-_hosting_ secara lokal, alamat akses biasanya akan ditampilkan di terminal (misalnya, http://127.0.0.1:8050/ atau http://localhost:5000/). Namun, untuk dashboard Looker Studio, Anda cukup mengakses tautan [_Jaya Jaya Institute Student Performance Dashboard_](https://lookerstudio.google.com/reporting/cf8b5153-87d7-47cc-8ee7-72aa9b5fb083).
 
 **Cara Menjalankan Skrip Prediksi Python (.py)** :
 
